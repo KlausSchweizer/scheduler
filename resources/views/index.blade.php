@@ -51,8 +51,7 @@
                                 </div>
                                 <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" class="mb-0">
                                     @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-outline-danger btn-sm">Mover para a Lixeira
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Marcar como feita
                                     </button>
                                 </form>
                             </div>
@@ -66,12 +65,12 @@
         <div class="col-md-5">
             <div class="card shadow-sm border-danger mb-4">
                 <div class="card-header bg-danger text-white">
-                    Lixeira
+                    Lixeira/Tarefas resolvidas
                     <span class="badge bg-light text-dark float-end">{{ $trashedTasks->count() }}</span>
                 </div>
                 <div class="card-body">
                     <p class="small text-muted mb-3">
-                        Itens na lixeira são removidos automaticamente pelo Scheduler após 30 dias.
+                        Itens na lixeira são removidos automaticamente após 30 dias.
                     </p>
                 </div>
             </div>
@@ -89,7 +88,6 @@
                                 <form action="{{ route('tasks.force-delete', $trashed->id) }}" method="POST"
                                       class="mb-0">
                                     @csrf
-                                    @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
                                 </form>
                             </div>

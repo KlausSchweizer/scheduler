@@ -6,5 +6,5 @@ use App\Http\Controllers\TaskController;
 Route::get('/', [TaskController::class, 'index'])->name('tasks.index');
 
 Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
-Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
-Route::delete('/tasks/{id}/force-delete', [TaskController::class, 'forceDelete'])->name('tasks.force-delete');
+Route::post('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+Route::post('/tasks/{id}/force-delete', [TaskController::class, 'forceDelete'])->name('tasks.force-delete');
